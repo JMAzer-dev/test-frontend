@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   padding: 0;
@@ -9,15 +13,12 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #fff;
 }
 :root {
   background-color: #000;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
 .search-bar {
   border: none;
   outline: none;
@@ -29,9 +30,6 @@ code {
     outline: none;
     width: 200px;
   }
-  body {
-    padding: 0;
-  }
 }
 /* md */
 @media (min-width: 768px) {
@@ -41,4 +39,25 @@ code {
 }
 /* lg */
 @media (min-width: 1024px) {
+}
+
+
+.react-player {
+  height: 77vh !important;
+  width: 100% !important;
+}
+
+
+@media screen and (max-width:800px){
+  .react-player {
+    height: 45vh !important;
+  }
+  .search-bar{
+    width:200px;
+  }
+}
+img{
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
 }
