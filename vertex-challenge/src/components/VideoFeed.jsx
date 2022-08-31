@@ -11,22 +11,35 @@ const VideoFeed = () => {
   const search = query.get('q');
   const navigate = useNavigate();
   const [videos, setVideos] = useState([]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 192a5449ee67d5c8be050b19bca7905f082ff9f5
   useEffect(() => {
     if (search !== null) {
       fetchAPI(search).then((data) => setVideos(data.items));
     }
   }, [search]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 192a5449ee67d5c8be050b19bca7905f082ff9f5
   const handleClean = () => {
     setVideos([]);
     navigate('/');
   };
+<<<<<<< HEAD
 
   return (
     <section className="flex flex-col md:flex-row">
       <div className="p-2 overflow-y-auto flex-1">
         <div className="mb-8">
+=======
+  return (
+    <section className="flex flex-col md:flex-row">
+      <div className="p-2 overflow-y-auto flex-1">
+        <div className='mb-8'>
+>>>>>>> 192a5449ee67d5c8be050b19bca7905f082ff9f5
           <h4 className="text-2xl font-bold mb-2 text-white">
             Buscar
             <span className="text-[#f31503]"> Videos: </span>
