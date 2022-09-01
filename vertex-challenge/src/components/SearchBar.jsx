@@ -28,7 +28,8 @@ const SearchBar = () => {
       <input
         type="text"
         className="search-bar ml-3"
-        placeholder="Procurar..."
+        required
+        placeholder="Pesquisar..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

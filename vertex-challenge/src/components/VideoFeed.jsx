@@ -13,7 +13,9 @@ const VideoFeed = () => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     if (search !== null) {
-      fetchAPI(search).then((data) => setVideos(data.items));
+      fetchAPI(
+        `search?part=id,snippet&maxResults=10&order=relevance&q=${search}`
+      ).then((data) => setVideos(data.items));
     }
   }, [search]);
   const handleClean = () => {
@@ -25,12 +27,11 @@ const VideoFeed = () => {
     <section className="flex flex-col md:flex-row">
       <div className="p-2 overflow-y-auto flex-1">
         <div className="mb-8">
-          <h4 className="text-2xl font-bold mb-2 text-white">
-            Buscar
-            <span className="text-[#f31503]"> Videos: </span>
-            {search}
-          </h4>
           <div className={videos.length > 0 ? 'block' : 'hidden'}>
+            <h4 className="text-2xl font-bold mb-2 text-white">
+              Resultados para:
+              <span className="text-[#f31503]"> {search}</span>
+            </h4>
             <Button variant="contained" color="error" onClick={handleClean}>
               Limpar Busca
             </Button>
@@ -40,7 +41,13 @@ const VideoFeed = () => {
           {videos.map((item, idx) => (
             <div key={idx}>
               {item.id.videoId ? <VideoCard video={item} /> : null}
-              {item.id.channelId ? <ChannelCard channelDetail={item} /> : null}
+              {item.id.channelId ? (
+                <ChannelCard
+                  channelDetail={item}
+                  margin={false}
+                  pointer={true}
+                />
+              ) : null}
             </div>
           ))}
         </section>
