@@ -1,7 +1,7 @@
-import { Route, Routes } from 'react-router-dom';
-import ChannelDetail from './components/ChannelDetail';
-import VideoStream from './components/VideoStream';
-import Home from './pages/Home';
+import { Route, Routes } from "react-router-dom";
+import ChannelDetail from "./components/ChannelDetail";
+import VideoStream from "./components/VideoStream";
+import Home from "./pages/Home";
 
 function App() {
   return (

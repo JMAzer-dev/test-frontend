@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { CheckCircle } from '@mui/icons-material';
+import React from "react";
+import { Link } from "react-router-dom";
+import { CheckCircle } from "@mui/icons-material";
 
 const VideoCard = ({
   video: {
@@ -8,6 +8,7 @@ const VideoCard = ({
     snippet,
   },
 }) => {
+  if (!snippet?.title && !snippet?.channelTitle) return;
   return (
     <section className="flex flex-col w-[300px] sm:w-[320px] shadow-none rounded-none">
       <div className="">
@@ -20,7 +21,7 @@ const VideoCard = ({
           to={videoId ? `/video/${videoId}` : `/demo-video/`}
           className="text-md font-bold text-white"
         >
-          {snippet?.title.substring(0, 60) || 'Este vídeo não possui título'}
+          {snippet?.title.substring(0, 60) || "Este vídeo não possui título"}
         </Link>
         <Link
           to={
@@ -31,8 +32,8 @@ const VideoCard = ({
           className="text-sm font-bold text-gray-700"
         >
           {snippet?.channelTitle.substring(0, 40) ||
-            'Este canal não possui nome'}
-          <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '3px' }} />
+            "Este canal não possui nome"}
+          <CheckCircle sx={{ fontSize: 12, color: "gray", ml: "3px" }} />
         </Link>
       </div>
     </section>

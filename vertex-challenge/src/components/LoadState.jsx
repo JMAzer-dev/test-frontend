@@ -1,5 +1,5 @@
-import React from 'react';
-import loadImg from '../assets/load.svg';
+import React from "react";
+import loadImg from "../assets/load.svg";
 
 const LoadState = ({ loading = false }) => {
   return (
